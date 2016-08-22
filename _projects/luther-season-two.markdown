@@ -1,15 +1,22 @@
 ---
-title: 28 Weeks Later
-date: 2007-04-26 00:00:00 Z
-medium: film
-img: "/uploads/shaheen-baig-casting-28-weeks-later.jpg"
-director: Juan Carlos Fresnadillo
-with: Robert Carlyle, Imogen Poots, Jeremy Renner and Idris Elba
-imdb: http://www.imdb.com/title/tt0463854/
-video: 0lt6fy8xo2
+title: Luther Season Two
+date: 2010-06-14 00:00:00 Z
+medium: television
+img: "/uploads/luther-season-two.jpg"
+span: July 2010 – May 2011
+company: BBC Drama Series and Serials
+runtime: 2 x 120 min. episodes
+awards: Golden Globe winner & Emmy nominated for Best Series, Best Actor, Best Director, Best writer. Won RTS Drama Series
+creator: Neil Cross
+director: Sam Miller
+with: Idris Elba, Ruth Wilson, Warren Brown, Aimee-Ffion Edwards, Kirsten Wareing
+producers: Phillippa Giles, Katie Swinden, Idris Elba
+imdb: http://www.imdb.com/title/tt1474684/
+video: 61619539
 layout: project
 is-in-production: 
-is-featured: 
-featured-image: 
+is-featured: "true"
+featured-image: "/uploads/luther-season-two.jpg"
 ---
 
+LUTHER is a dark psychological crime drama in which John Luther (Idris Elba), is a man struggling with his own terrible demons, might just be as dangerous as the depraved murderers he hunts. In this second season, John Luther, devastated by the brutal murder of his wife returns to policing in a different world and psychopaths on a bigger scale.

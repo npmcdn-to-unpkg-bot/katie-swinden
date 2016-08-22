@@ -6,7 +6,7 @@ layout: default
 <div class="row project__meta">
 	<div class="small-12 columns text-center">
 		<h1>{{ page.title }}</h1>
-		<p class="excerpt__director">Director: {{ page.director }}</p>
+		<p class="excerpt__director">Director(s): {{ page.director }}</p>
 		<p class="excerpt__with">With: {{ page.with }}</p>
 		<p><a href="{{ page.imdb}}" target="_blank">IMDB</a></p>
 	</div>
@@ -30,8 +30,8 @@ layout: default
 {% endif %}
 
 
-<div class="row post__content">
-	<div class="small-12 columns">
+<div class="row  align-center post__content">
+	<div class="small-11 medium-8 columns">
 		{{ page.content }}
 	</div>
 </div>

@@ -1,5 +1,5 @@
 /*!
- * Unidragger v1.1.6
+ * Unidragger v2.1.0
  * Draggable base class
  * MIT license
  */
@@ -7,35 +7,31 @@
 /*jshint browser: true, unused: true, undef: true, strict: true */
 
 ( function( window, factory ) {
-  /*global define: false, module: false, require: false */
-  'use strict';
   // universal module definition
+  /*jshint strict: false */ /*globals define, module, require */
 
   if ( typeof define == 'function' && define.amd ) {
     // AMD
     define( [
-      'eventie/eventie',
       'unipointer/unipointer'
-    ], function( eventie, Unipointer ) {
-      return factory( window, eventie, Unipointer );
+    ], function( Unipointer ) {
+      return factory( window, Unipointer );
     });
-  } else if ( typeof exports == 'object' ) {
+  } else if ( typeof module == 'object' && module.exports ) {
     // CommonJS
     module.exports = factory(
       window,
-      require('eventie'),
       require('unipointer')
     );
   } else {
     // browser global
     window.Unidragger = factory(
       window,
-      window.eventie,
       window.Unipointer
     );
   }
 
-}( window, function factory( window, eventie, Unipointer ) {
+}( window, function factory( window, Unipointer ) {
 
 'use strict';
 
@@ -43,29 +39,20 @@
 
 function noop() {}
 
-// handle IE8 prevent default
-function preventDefaultEvent( event ) {
-  if ( event.preventDefault ) {
-    event.preventDefault();
-  } else {
-    event.returnValue = false;
-  }
-}
-
 // -------------------------- Unidragger -------------------------- //
 
 function Unidragger() {}
 
-// inherit Unipointer & EventEmitter
-Unidragger.prototype = new Unipointer();
+// inherit Unipointer & EvEmitter
+var proto = Unidragger.prototype = Object.create( Unipointer.prototype );
 
 // ----- bind start ----- //
 
-Unidragger.prototype.bindHandles = function() {
+proto.bindHandles = function() {
   this._bindHandles( true );
 };
 
-Unidragger.prototype.unbindHandles = function() {
+proto.unbindHandles = function() {
   this._bindHandles( false );
 };
 
@@ -74,7 +61,7 @@ var navigator = window.navigator;
  * works as unbinder, as you can .bindHandles( false ) to unbind
  * @param {Boolean} isBind - will unbind if falsey
  */
-Unidragger.prototype._bindHandles = function( isBind ) {
+proto._bindHandles = function( isBind ) {
   // munge isBind, default to true
   isBind = isBind === undefined ? true : !!isBind;
   // extra bind logic
@@ -90,44 +77,15 @@ Unidragger.prototype._bindHandles = function( isBind ) {
       handle.style.msTouchAction = isBind ? 'none' : '';
     };
   } else {
-    binderExtra = function() {
-      // TODO re-enable img.ondragstart when unbinding
-      if ( isBind ) {
-        disableImgOndragstart( handle );
-      }
-    };
+    binderExtra = noop;
   }
   // bind each handle
-  var bindMethod = isBind ? 'bind' : 'unbind';
-  for ( var i=0, len = this.handles.length; i < len; i++ ) {
+  var bindMethod = isBind ? 'addEventListener' : 'removeEventListener';
+  for ( var i=0; i < this.handles.length; i++ ) {
     var handle = this.handles[i];
     this._bindStartEvent( handle, isBind );
     binderExtra( handle );
-    eventie[ bindMethod ]( handle, 'click', this );
-  }
-};
-
-// remove default dragging interaction on all images in IE8
-// IE8 does its own drag thing on images, which messes stuff up
-
-function noDragStart() {
-  return false;
-}
-
-// TODO replace this with a IE8 test
-var isIE8 = 'attachEvent' in document.documentElement;
-
-// IE8 only
-var disableImgOndragstart = !isIE8 ? noop : function( handle ) {
-
-  if ( handle.nodeName == 'IMG' ) {
-    handle.ondragstart = noDragStart;
-  }
-
-  var images = handle.querySelectorAll('img');
-  for ( var i=0, len = images.length; i < len; i++ ) {
-    var img = images[i];
-    img.ondragstart = noDragStart;
+    handle[ bindMethod ]( 'click', this );
   }
 };
 
@@ -138,7 +96,7 @@ var disableImgOndragstart = !isIE8 ? noop : function( handle ) {
  * @param {Event} event
  * @param {Event or Touch} pointer
  */
-Unidragger.prototype.pointerDown = function( event, pointer ) {
+proto.pointerDown = function( event, pointer ) {
   // dismiss range sliders
   if ( event.target.nodeName == 'INPUT' && event.target.type == 'range' ) {
     // reset pointerDown logic
@@ -155,24 +113,24 @@ Unidragger.prototype.pointerDown = function( event, pointer ) {
   }
   // bind move and end events
   this._bindPostStartEvents( event );
-  // track scrolling
-  this.pointerDownScroll = Unidragger.getScrollPosition();
-  eventie.bind( window, 'scroll', this );
-
   this.emitEvent( 'pointerDown', [ event, pointer ] );
 };
 
 // base pointer down logic
-Unidragger.prototype._dragPointerDown = function( event, pointer ) {
+proto._dragPointerDown = function( event, pointer ) {
   // track to see when dragging starts
   this.pointerDownPoint = Unipointer.getPointerPoint( pointer );
 
-  // prevent default, unless touchstart or <select>
-  var isTouchstart = event.type == 'touchstart';
-  var targetNodeName = event.target.nodeName;
-  if ( !isTouchstart && targetNodeName != 'SELECT' ) {
-    preventDefaultEvent( event );
+  var canPreventDefault = this.canPreventDefaultOnPointerDown( event, pointer );
+  if ( canPreventDefault ) {
+    event.preventDefault();
   }
+};
+
+// overwriteable method so Flickity can prevent for scrolling
+proto.canPreventDefaultOnPointerDown = function( event ) {
+  // prevent default, unless touchstart or <select>
+  return event.target.nodeName != 'SELECT';
 };
 
 // ----- move event ----- //
@@ -182,14 +140,14 @@ Unidragger.prototype._dragPointerDown = function( event, pointer ) {
  * @param {Event} event
  * @param {Event or Touch} pointer
  */
-Unidragger.prototype.pointerMove = function( event, pointer ) {
+proto.pointerMove = function( event, pointer ) {
   var moveVector = this._dragPointerMove( event, pointer );
   this.emitEvent( 'pointerMove', [ event, pointer, moveVector ] );
   this._dragMove( event, pointer, moveVector );
 };
 
 // base pointer move logic
-Unidragger.prototype._dragPointerMove = function( event, pointer ) {
+proto._dragPointerMove = function( event, pointer ) {
   var movePoint = Unipointer.getPointerPoint( pointer );
   var moveVector = {
     x: movePoint.x - this.pointerDownPoint.x,
@@ -203,7 +161,7 @@ Unidragger.prototype._dragPointerMove = function( event, pointer ) {
 };
 
 // condition if pointer has moved far enough to start drag
-Unidragger.prototype.hasDragStarted = function( moveVector ) {
+proto.hasDragStarted = function( moveVector ) {
   return Math.abs( moveVector.x ) > 3 || Math.abs( moveVector.y ) > 3;
 };
 
@@ -215,12 +173,12 @@ Unidragger.prototype.hasDragStarted = function( moveVector ) {
  * @param {Event} event
  * @param {Event or Touch} pointer
  */
-Unidragger.prototype.pointerUp = function( event, pointer ) {
+proto.pointerUp = function( event, pointer ) {
   this.emitEvent( 'pointerUp', [ event, pointer ] );
   this._dragPointerUp( event, pointer );
 };
 
-Unidragger.prototype._dragPointerUp = function( event, pointer ) {
+proto._dragPointerUp = function( event, pointer ) {
   if ( this.isDragging ) {
     this._dragEnd( event, pointer );
   } else {
@@ -229,28 +187,24 @@ Unidragger.prototype._dragPointerUp = function( event, pointer ) {
   }
 };
 
-Unidragger.prototype.pointerDone = function() {
-  eventie.unbind( window, 'scroll', this );
-};
-
 // -------------------------- drag -------------------------- //
 
 // dragStart
-Unidragger.prototype._dragStart = function( event, pointer ) {
+proto._dragStart = function( event, pointer ) {
   this.isDragging = true;
-  this.dragStartPoint = Unidragger.getPointerPoint( pointer );
+  this.dragStartPoint = Unipointer.getPointerPoint( pointer );
   // prevent clicks
   this.isPreventingClicks = true;
 
   this.dragStart( event, pointer );
 };
 
-Unidragger.prototype.dragStart = function( event, pointer ) {
+proto.dragStart = function( event, pointer ) {
   this.emitEvent( 'dragStart', [ event, pointer ] );
 };
 
 // dragMove
-Unidragger.prototype._dragMove = function( event, pointer, moveVector ) {
+proto._dragMove = function( event, pointer, moveVector ) {
   // do not drag if not dragging yet
   if ( !this.isDragging ) {
     return;
@@ -259,46 +213,40 @@ Unidragger.prototype._dragMove = function( event, pointer, moveVector ) {
   this.dragMove( event, pointer, moveVector );
 };
 
-Unidragger.prototype.dragMove = function( event, pointer, moveVector ) {
-  preventDefaultEvent( event );
+proto.dragMove = function( event, pointer, moveVector ) {
+  event.preventDefault();
   this.emitEvent( 'dragMove', [ event, pointer, moveVector ] );
 };
 
 // dragEnd
-Unidragger.prototype._dragEnd = function( event, pointer ) {
+proto._dragEnd = function( event, pointer ) {
   // set flags
   this.isDragging = false;
   // re-enable clicking async
-  var _this = this;
   setTimeout( function() {
-    delete _this.isPreventingClicks;
-  });
+    delete this.isPreventingClicks;
+  }.bind( this ) );
 
   this.dragEnd( event, pointer );
 };
 
-Unidragger.prototype.dragEnd = function( event, pointer ) {
+proto.dragEnd = function( event, pointer ) {
   this.emitEvent( 'dragEnd', [ event, pointer ] );
-};
-
-Unidragger.prototype.pointerDone = function() {
-  eventie.unbind( window, 'scroll', this );
-  delete this.pointerDownScroll;
 };
 
 // ----- onclick ----- //
 
 // handle all clicks and prevent clicks when dragging
-Unidragger.prototype.onclick = function( event ) {
+proto.onclick = function( event ) {
   if ( this.isPreventingClicks ) {
-    preventDefaultEvent( event );
+    event.preventDefault();
   }
 };
 
 // ----- staticClick ----- //
 
 // triggered after pointer down & up with no/tiny movement
-Unidragger.prototype._staticClick = function( event, pointer ) {
+proto._staticClick = function( event, pointer ) {
   // ignore emulated mouse up clicks
   if ( this.isIgnoringMouseUp && event.type == 'mouseup' ) {
     return;
@@ -314,52 +262,22 @@ Unidragger.prototype._staticClick = function( event, pointer ) {
   // set flag for emulated clicks 300ms after touchend
   if ( event.type != 'mouseup' ) {
     this.isIgnoringMouseUp = true;
-    var _this = this;
     // reset flag after 300ms
     setTimeout( function() {
-      delete _this.isIgnoringMouseUp;
-    }, 400 );
+      delete this.isIgnoringMouseUp;
+    }.bind( this ), 400 );
   }
 };
 
-Unidragger.prototype.staticClick = function( event, pointer ) {
+proto.staticClick = function( event, pointer ) {
   this.emitEvent( 'staticClick', [ event, pointer ] );
-};
-
-// ----- scroll ----- //
-
-Unidragger.prototype.onscroll = function() {
-  var scroll = Unidragger.getScrollPosition();
-  var scrollMoveX = this.pointerDownScroll.x - scroll.x;
-  var scrollMoveY = this.pointerDownScroll.y - scroll.y;
-  // cancel click/tap if scroll is too much
-  if ( Math.abs( scrollMoveX ) > 3 || Math.abs( scrollMoveY ) > 3 ) {
-    this._pointerDone();
-  }
 };
 
 // ----- utils ----- //
 
-Unidragger.getPointerPoint = function( pointer ) {
-  return {
-    x: pointer.pageX !== undefined ? pointer.pageX : pointer.clientX,
-    y: pointer.pageY !== undefined ? pointer.pageY : pointer.clientY
-  };
-};
-
-var isPageOffset = window.pageYOffset !== undefined;
-
-// get scroll in { x, y }
-Unidragger.getScrollPosition = function() {
-  return {
-    x: isPageOffset ? window.pageXOffset : document.body.scrollLeft,
-    y: isPageOffset ? window.pageYOffset : document.body.scrollTop
-  };
-};
+Unidragger.getPointerPoint = Unipointer.getPointerPoint;
 
 // -----  ----- //
-
-Unidragger.getPointerPoint = Unipointer.getPointerPoint;
 
 return Unidragger;
 

@@ -1,50 +1,42 @@
 <div class="title-bar" data-responsive-toggle="primary-menu" data-hide-for="medium">
-  <div class="title-bar-title"><a href="/" class="header__home">Shaheen Baig Casting</a></div>
+  <div class="title-bar-title"><a href="/" class="header__home">{{ site.title }}</a></div>
   <button class="hamburger hamburger--collapse" id="menuBar" data-toggler=".is-active" type="button" data-toggle="menuBar"><span class="hamburger-box">
     <span class="hamburger-inner"></span>
   </span></button>
 </div>
 
 <div class="top-bar" id="primary-menu">
-  <div class="top-bar-left">
+  
+<div class="top-bar-left">
 	<ul class="vertical medium-horizontal dropdown menu primary-menu" data-dropdown-menu>
-	<li class="hide-for-small-only"><a href="/" class="header__home">Shaheen Baig Casting</a></li>
+	<li class="hide-for-small-only"><a href="/" class="header__home">{{ site.title }}</a></li>
 	{% for link in site.data.navigation %}
-        {% assign current = nil %}
-        {% if page.url contains link.url %}
-            {% assign current = 'current' %}
-        {% endif %}
-        
-        
-<!-- check to see if the data file has a submenu, and if so display it -->
-{% if link.subcategories != null %}
-<li>
-    <a href="{{ link.href }}">{{ link.title }}</a>
-    <ul class="menu">
+	    {% assign current = nil %}
+	    {% if page.url contains link.url %}
+	        {% assign current = 'current' %}
+	    {% endif %}
+	{% if link.subcategories != null %}
+	<li>
+	<a href="{{ link.href }}">{{ link.title }}</a>
+	<ul class="menu">
 	  {% for subcategory in link.subcategories %}
-      <li><a href="{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
-      {% endfor %}
-    </ul>
-</li>
-{% else %}
-
-<!— display the top level navigation for items that don’t have a submenu -->
-<li>
-<a href="{{ link.href }}">{{ link.title }}</a>
-{% endif %}
-</li>
-    
-    {% endfor %}
+	  <li><a href="{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
+	  {% endfor %}
 	</ul>
-	
-
-
-    
-  </div>
-  <div class="top-bar-right hide-for-small-only">
-    <ul class="menu align-right">
-	<li><a href="{{ site.facebook }}">FB</a></li>
-	<li><a href="{{ site.twitter }}">TW</a></li>
-    </ul>
-  </div>
+	</li>
+	{% else %}
+	<li>
+	<a href="{{ link.href }}">{{ link.title }}</a>
+	{% endif %}
+	</li>
+	{% endfor %}
+	</ul> 
+</div>
+  
+<div class="top-bar-right hide-for-small-only">
+	<ul class="menu align-right">
+		<li><a href="{{ site.twitter }}">Follow</a></li>
+	</ul>
+</div>
+  
 </div>

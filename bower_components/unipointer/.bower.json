@@ -1,10 +1,8 @@
 {
   "name": "unipointer",
   "main": "unipointer.js",
-  "version": "1.1.0",
   "dependencies": {
-    "eventEmitter": "~4.2.11",
-    "eventie": "git://github.com/desandro/eventie.git#^1"
+    "ev-emitter": "~1.0.1"
   },
   "homepage": "https://github.com/metafizzy/unipointer",
   "authors": [
@@ -30,13 +28,14 @@
     "tests",
     "package.json"
   ],
-  "_release": "1.1.0",
+  "version": "2.1.0",
+  "_release": "2.1.0",
   "_resolution": {
     "type": "version",
-    "tag": "v1.1.0",
-    "commit": "48b0420cd58ca6c74dc19d1bdcbe66dd3f1a9ea5"
+    "tag": "v2.1.0",
+    "commit": "c32965b73d1c4b2bf852b2ef9c5fa747c5f6cc88"
   },
   "_source": "https://github.com/metafizzy/unipointer.git",
-  "_target": "~1.1.0",
+  "_target": "^2.1.0",
   "_originalSource": "unipointer"
 }

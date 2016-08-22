@@ -3,10 +3,6 @@ layout: default
 ---
 
 <section class="projects__content">
-<div class="row columns text-center">
-<h4 class="excerpt__highlight">{{ page.title }}</h4>
-</div>
-
 <div class="row">
 {% assign projects = site.projects | sort: 'date' | reverse %}
 {% for project in projects %}

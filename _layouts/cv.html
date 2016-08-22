@@ -5,11 +5,6 @@ layout: default
 <section class="cv">
 {% assign collection = site.projects | group_by: "medium" %}
 {% for group in collection %}
-<div class="row cv__title">
-<div class="small-12 columns text-center">
-  <h4 class="excerpt__highlight">{{ group.name }}</h4>
-</div>
-</div>
 
 <div class="row">
 <div class="small-12 columns">

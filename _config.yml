@@ -1,5 +1,5 @@
 ---
-title: Shaheen Baig Casting
+title: Katie Swinden
 timezone: UTC
 collections:
   project_categories:
@@ -20,7 +20,7 @@ defaults:
     type: pages
   values:
     layout: page
-url: http://shaheenbaigcasting.com
+url: http://katieswinden.com
 permalink: pretty
 gems:
 - jekyll-seo-tag
@@ -31,14 +31,13 @@ kramdown:
   input: GFM
   hard_wrap: false
 highlighter: rouge
-description: London-based casting director working on projects as diverse as Control,
-  Black Mirror and The Impossible
-domain: http://insideretail.com
-company: Shaheen Baig Casting
-email: info@shaheenbaigcasting.com
-facebook: https://www.facebook.com/shaheen-baig-casting-172941678486/
+description: Creative Director at Fifty Fathoms Productions with a brief to develop and executive produce the labels new commissions
+domain: http://katieswinden.com
+company: Katie Swinden
+email: katieswinden@mac.com
+facebook: 
 instagram: 
-twitter: https://twitter.com/sbaigcasting
+twitter: https://twitter.com/swindenproduces
 linkedin: 
 googleplus: 
 google: UA-61943851-1

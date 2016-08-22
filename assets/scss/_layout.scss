@@ -80,26 +80,10 @@ body {
 }
 
 // Header
-.header__logo {
-	width: 4rem;
-	height: 2rem;
-}
 
 .header__home {
 	font-family: $header-font-family;
 	font-size: 1.5rem;
-}
-
-.top-bar {
-	font-family: $font-family-secondary;
-	font-size: 1rem;
-}
-
-.top-bar-left {
-}
-
-.top-bar-right {
-	font-family: $font-family-secondary;
 }
 
 .top-bar .menu > li > a {
@@ -161,8 +145,13 @@ body {
 
 //Index
 
+.index__description {
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+
 .index__content {
-	padding-top: 2rem;
+	padding-top: 0rem;
 	padding-bottom: 2rem;
 }
 
@@ -431,86 +420,7 @@ body {
 
 
 
-// Sponsors
-.sponsors {
-	background-color: $color--light-gray;
-	color: $color--darkest-gray;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
-
-.sponsors a {
-	color: $color--darkest-gray;
-	&:hover {
-    color: black;
-  }
-}
-
-/*
-.sponsors__menu {
-	@include menu-direction(vertical);
-	@include breakpoint(medium) {
-    @include menu-direction(horizontal);
-  	}
-}
-*/
-
-.sponsors .icon {
-	font-size: 4rem;
-	@include breakpoint(medium) {
-    font-size: 6rem;
-  	}
-}
-
-.sponsors h5 {
-	text-transform: uppercase;
-	letter-spacing: $letter-spacing--looser;
-}
-
-// Subscribe
-.subscribe {
-	background-color: $color--orange;
-	color: $color--white;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
-
-.subscribe__form {
-	padding-top: 1rem;
-}
-
-.subscribe__button {
-	margin-left: 2rem;
-}
-
-.subscribe h5 {
-	text-transform: uppercase;
-	letter-spacing: $letter-spacing--looser;
-}
-
 // Footer
-.footer__top {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
-
-.footer__top__logo {
-	padding: 0.7rem 1rem;
-	text-align: center;
-	@include breakpoint(medium) {
-    text-align: left;
-  	}
-}
-
-.footer__top .menu > li > a {
-	font-size: 80%;
-	padding-top: 0.35rem;
-	padding-bottom: 0.35rem;
-}
-
-.footer__top .show-for-small-only {
-	font-size: 80%;
-}
 
 .footer__bottom {
 	color: $color--black;

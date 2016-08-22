@@ -2,54 +2,23 @@
 layout: default
 ---
 
-<div class="index__carousel">
-{% include carousel.html %}
+<div class="index__description">
+<div class="row">
+<div class="small-12 medium-8 columns">
+<h1>{{ site.description }}</h1>
+</div>
+</div>
 </div>
 
 <section class="index__content">
-<div class="row">
-	<div class="columns">
-		<p class="text-center excerpt__highlight">Recent</p>
-	</div>
-</div>
 
 <div class="row">
 {% assign projects = site.projects | sort: 'date' | reverse | where: "is-in-production", "" %}
-{% for project in projects limit:6 %}
-<div class="small-12 medium-6 large-4 columns">
+{% for project in projects limit:9 %}
+<div class="small-12 medium-6 large-6 columns">
 {% include excerpt.html %}
 </div>
 {% endfor %}
 </div>
 
-
-<div class="row">
-	<div class="columns">
-		<p class="text-center excerpt__highlight">In Production</p>
-	</div>
-</div>
-
-<div class="row">
-{% assign projects = site.projects | sort: 'date' | reverse %}
-{% for project in projects %}
-{% if project.is-in-production contains 'true' %}
-<div class="small-12 medium-6 large-4 columns">
-<article class="excerpt">
-<!-- Title -->
-<h2 class="excerpt__title">{{ project.title }}</h2>
-<!-- End Title -->
-
-<!-- Director -->
-<p class="excerpt__director">Director: {{ project.director }}</p>
-<!-- End Director -->
-
-<!-- With -->
-<p class="excerpt__with">With: {{ project.with }}</p>
-<!-- End With -->
-
-</article>
-</div>
-{% endif %}
-{% endfor %}
-</div>
 </section>

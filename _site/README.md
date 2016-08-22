@@ -1,6 +1,6 @@
-# Inside Retail
+# Katie Swinden
 
-Website for Inside Retail. Please go to [www.insideretail.com](http://insideretail.com) in case you want to take a look at the website.
+Website for Inside Retail. Please go to [www.katieswinden.com](http://katieswinden.com) in case you want to take a look at the website.
 
 * * *
 

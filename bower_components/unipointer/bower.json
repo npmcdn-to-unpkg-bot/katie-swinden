@@ -1,10 +1,8 @@
 {
   "name": "unipointer",
   "main": "unipointer.js",
-  "version": "1.1.0",
   "dependencies": {
-    "eventEmitter": "~4.2.11",
-    "eventie": "git://github.com/desandro/eventie.git#^1"
+    "ev-emitter": "~1.0.1"
   },
   "homepage": "https://github.com/metafizzy/unipointer",
   "authors": [
