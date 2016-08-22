@@ -6,17 +6,19 @@ img: "/uploads/spooks-season-six.jpg"
 span: Oct 2006 – Nov 2007
 company: Kudos Film & Television
 runtime: 10 x 60 min. episodes
-awards:
-creator: Neil Cross, Rupert Walters, David Farr, Zinne Harris, George Tiffin, Ben Richards
+awards: 
+creator: Neil Cross, Rupert Walters, David Farr, Zinne Harris, George Tiffin, Ben
+  Richards
 director: Omar Madha, Charles Beeson, Brendan Maher, Stefan Schwartz, Alrick Riley
-with: Rupert Penry-Jones, Hermione Norris, Peter Firth, Gemma Jones, Raza Jaffrey, Miranda Raison
+with: Rupert Penry-Jones, Hermione Norris, Peter Firth, Gemma Jones, Raza Jaffrey,
+  Miranda Raison
 producers: Jane Featherstone, Simon Crawford Collins, Sarah Brandist, Katie Swinden
 imdb: http://www.imdb.com/title/tt2442560/
 video: 64350474
 layout: project
 is-in-production: 
-is-featured:
-featured-image:
+is-featured: 
+featured-image: 
 ---
 
 Season Six was different to previous season in that it focused on one main story throughout and brought in other elements along the way.

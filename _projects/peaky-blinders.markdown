@@ -6,16 +6,18 @@ img: "/uploads/peaky-blinders.jpg"
 span: April 2012 – April 2013
 company: Mandabach Productions / Tiger Aspect for BBC2
 runtime: 6 x 60 min. episodes
-awards:
-creator: Steven Knight, David Leland, Steven Russell, Toby Finlay 
+awards: 
+creator: Steven Knight, David Leland, Steven Russell, Toby Finlay
 director: Otto Bathurst, Tom Harper
-with: Cillian Murphy, Sam Neill, Helen McCrory, Paul Anderson, Annabelle Wallis, Joe Cole
-producers: Steven Knight, Caryn Mandabach, Jamie Glazebrook, Greg Brenman, Frith Tiplady, Matthew Read, Katie Swinden
+with: Cillian Murphy, Sam Neill, Helen McCrory, Paul Anderson, Annabelle Wallis, Joe
+  Cole
+producers: Steven Knight, Caryn Mandabach, Jamie Glazebrook, Greg Brenman, Frith Tiplady,
+  Matthew Read, Katie Swinden
 imdb: http://www.imdb.com/title/tt2442560/
 video: 74524699
 layout: project
 is-in-production: 
-is-featured: "true"
+is-featured: 'true'
 featured-image: "/uploads/peaky-blinders.jpg"
 ---
 

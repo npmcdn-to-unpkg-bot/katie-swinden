@@ -6,7 +6,8 @@ img: "/uploads/luther-season-two.jpg"
 span: July 2010 – May 2011
 company: BBC Drama Series and Serials
 runtime: 2 x 120 min. episodes
-awards: Golden Globe winner & Emmy nominated for Best Series, Best Actor, Best Director, Best writer. Won RTS Drama Series
+awards: Golden Globe winner & Emmy nominated for Best Series, Best Actor, Best Director,
+  Best writer. Won RTS Drama Series
 creator: Neil Cross
 director: Sam Miller
 with: Idris Elba, Ruth Wilson, Warren Brown, Aimee-Ffion Edwards, Kirsten Wareing
@@ -15,7 +16,7 @@ imdb: http://www.imdb.com/title/tt1474684/
 video: 61619539
 layout: project
 is-in-production: 
-is-featured: "true"
+is-featured: 'true'
 featured-image: "/uploads/luther-season-two.jpg"
 ---
 

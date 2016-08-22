@@ -14,7 +14,7 @@ imdb: http://www.imdb.com/title/tt1474684/
 video: 61914262
 layout: project
 is-in-production: 
-is-featured: "true"
+is-featured: 'true'
 featured-image: "/uploads/luther-season-one.jpg"
 ---
 
