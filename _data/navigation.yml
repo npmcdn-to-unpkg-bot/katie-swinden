@@ -1,0 +1,18 @@
+- title: "Projects"
+  href: "/projects/"
+  subcategories:
+    - subtitle: "Film"
+      subhref: "/film/"
+    - subtitle: "Television"
+      subhref: "/television/"
+    - subtitle: "Short"
+      subhref: "/short/"
+    - subtitle: "In Production"
+      subhref: "/in-production/"
+
+- title: "Info"
+  href: "/info/"
+
+
+- title: "CV"
+  href: "/cv/"

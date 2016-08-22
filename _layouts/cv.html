@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<section class="cv">
+{% assign collection = site.projects | group_by: "medium" %}
+{% for group in collection %}
+<div class="row cv__title">
+<div class="small-12 columns text-center">
+  <h4 class="excerpt__highlight">{{ group.name }}</h4>
+</div>
+</div>
+
+<div class="row">
+<div class="small-12 columns">
+
+<table class="hover">
+  <tbody>
+	{% assign collectionsorted = group.items | sort: 'date' | reverse %}
+	{% for item in collectionsorted %}
+    <tr>
+      <td width="200"><a href="{{item.url}}">{{item.title}}</a></td>
+      <td width="200"><a href="{{item.url}}">{{item.director}}</a></td>
+      <td width="400"><a href="{{item.url}}">{{item.with}}</a></td>
+      <td width="50"><a href="{{item.imdb}}" target="_blank">IMDB</a></td>
+      <td width="40"><a href="{{item.url}}">{{item.date | date: '%Y/%m'}}</a></td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+</div>
+</div>
+{%endfor%}
+</section>

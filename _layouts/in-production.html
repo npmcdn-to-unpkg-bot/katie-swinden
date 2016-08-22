@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<section class="projects__content">
+<div class="row columns text-center">
+<h4 class="excerpt__highlight">{{ page.title }}</h4>
+</div>
+
+<div class="row">
+{% assign projects = site.projects | sort: 'date' | reverse %}
+{% for project in projects %}
+{% if project.is-in-production contains 'true' %}
+<div class="small-12 medium-6 large-4 columns">
+{% include excerpt-production.html %}
+</div>
+{% endif %}
+{% endfor %}
+</div>
+</section>

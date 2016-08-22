@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<!-- Post Title -->
+<div class="row project__meta">
+	<div class="small-12 columns text-center">
+		<h1>{{ page.title }}</h1>
+		<p class="excerpt__director">Director: {{ page.director }}</p>
+		<p class="excerpt__with">With: {{ page.with }}</p>
+		<p><a href="{{ page.imdb}}" target="_blank">IMDB</a></p>
+	</div>
+</div>
+
+{% if page.video or page.img %}
+<div class="row post__hero align-center">
+<div class="small-8 columns">
+{% if page.video %}
+
+<div class="flex-video widescreen vimeo">
+<iframe src="//fast.wistia.net/embed/iframe/{{page.video}}" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe><script src="//fast.wistia.net/assets/external/E-v1.js" async></script>
+</div>
+
+{% elsif page.img %}
+<img src="{{page.img}}" alt="{{page.title}}" />
+{% endif %}
+
+</div>
+</div>
+{% endif %}
+
+
+<div class="row post__content">
+	<div class="small-12 columns">
+		{{ page.content }}
+	</div>
+</div>
+
+<!-- Post Share Bottom -->
+<div class="row post__share__bottom">
+	<div class="small-12 columns text-center">
+		<p>Share<p>
+		<ul class="menu simple align-center">
+			{% include sharing.html %}
+	  	</ul>
+	</div>
+</div>
+<!-- End Post Share Bottom -->
+
+
+<div class="post__pagination">
+<div class="row">
+  <div class="small-6 columns">
+  {% if page.previous.url %}
+  
+    <p><a class="prev" href="{{page.previous.url}}"><svg class="icon icon-arrow-left8"><use xlink:href="#icon-arrow-left8"></use></svg> Previous</a></p>
+    <p class="hide-for-small-only"><a class="dark-gray prev" href="{{page.previous.url}}">{{page.previous.title}}</a></p>
+    
+  {% endif %}
+  </div>
+  <div class="small-6 columns text-right">
+  {% if page.next.url %}
+    
+    <p><a class="next text-right" href="{{page.next.url}}">Next <svg class="icon icon-arrow-right8"><use xlink:href="#icon-arrow-right8"></use></svg></a></p>
+    <p class="hide-for-small-only"><a class="dark-gray next text-right" href="{{page.next.url}}">{{page.next.title}}</a></p>
+   </div>
+  {% endif %}
+</div>
+</div>
+
+

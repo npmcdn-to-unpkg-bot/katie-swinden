@@ -1,0 +1,543 @@
+// Standard
+
+body {
+    opacity: 1;
+    transition: $primary-transition;
+}
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+svg {
+	max-width: 100%;
+}
+
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto
+}
+
+input::-webkit-input-placeholder {
+color: $color--white !important;
+}
+
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
+
+// Typography
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+@mixin accent-text {
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing--looser;
+}
+
+// Layout
+
+a {
+	color: $color--black;
+	transition: $primary-transition;
+	&:hover {
+      color: $color--dark-gray;
+    }
+}
+
+.button {
+	transition: $primary-transition;
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content-wrapper {
+  flex: 1;
+}
+
+// Header
+.header__logo {
+	width: 4rem;
+	height: 2rem;
+}
+
+.header__home {
+	font-family: $header-font-family;
+	font-size: 1.5rem;
+}
+
+.top-bar {
+	font-family: $font-family-secondary;
+	font-size: 1rem;
+}
+
+.top-bar-left {
+}
+
+.top-bar-right {
+	font-family: $font-family-secondary;
+}
+
+.top-bar .menu > li > a {
+	padding: 0.7rem 0.7rem;
+}
+
+.current a {
+  color: $color--dark-gray;
+}
+
+.element > a {
+  position: relative;
+  text-decoration: none;
+}
+
+.element > a:hover {
+  color: $color--dark-gray;
+}
+
+.element > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: $primary-transition;
+}
+
+.element-black > a:before {
+  background-color: $color--black;
+}
+
+
+.element > a:hover:before {
+  @include breakpoint(medium) {
+  visibility: visible;
+  transform: scaleX(1);
+}
+}
+
+.primary-menu {
+  @include breakpoint(small only) {
+   border-top: 1px solid $color--gray;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+}
+
+.social-menu {
+  @include breakpoint(small only) {
+   border-top: 1px solid $color--gray;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+}
+
+//Index
+
+.index__content {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+// Projects
+
+.projects__content {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+// Project
+
+.project__meta {
+	padding-top: 2rem;
+}
+
+.project__meta p {
+	margin-bottom: 0rem;
+}
+
+// CV
+
+.cv {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.cv__title {
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+}
+
+
+// Excerpt
+
+.excerpt__highlight {
+	font-family: $font-family-secondary;
+	@include accent-text;
+}
+
+.excerpt {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.excerpt__image {
+    position:relative;
+}
+
+.excerpt__image:after {
+    content:'\A';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: $primary-transition;
+}
+
+.excerpt__image:hover:after {
+    opacity:1;
+}
+
+
+.excerpt__title {
+	padding-top: 1rem;
+	margin-bottom: 0.25rem;
+	line-height: $line-height--tight
+}
+
+.excerpt p {
+	margin-bottom: 0;
+}
+
+// Page
+
+.page__title {
+	padding-top: 3rem;
+}
+
+.page__content {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+// Post
+.post__wrapper {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.post__panel {
+	background-color: $color--white;
+	padding: 2rem;
+	@include breakpoint(medium) {
+  padding: 3rem;
+  }
+  @include breakpoint(large) {
+    padding: 7rem;
+  }
+}
+
+.post__title {
+}
+
+.post__content__quote blockquote {
+	font-family: $header-font-family;
+	font-size: 2rem;
+	line-height: 1.2;
+	color: $color--black;
+}
+
+.post__content__quote cite {
+	padding-top: 1rem;
+}
+
+.post__hero {
+	padding-top: 3rem;
+}
+
+.post__content {
+	padding-top: 3rem;
+}
+
+.post__content__quote {
+	padding-top: 3rem;
+}
+
+
+.post__content a {
+  color: $color--dark-gray;
+  &:hover {
+    color: $color--black;
+  }
+}
+
+.post__share {
+	@include accent-text;
+}
+
+.post__share__bottom {
+	padding-top: 2rem;
+	@include accent-text;
+}
+
+.post__pagination {
+	padding-top: 2rem;
+}
+
+// Category
+
+.category {
+  background: $color--white;
+  height: 500px; /* set gallery height */
+}
+
+.category-cell {
+  width: 100%;
+  height: 100%; /* inherit height from gallery */
+//   margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  z-index: 1;
+}
+
+.category__header {
+  width: 100%;
+  height: 100%; /* inherit height from gallery */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  z-index: 1;
+  position: relative;
+  @include breakpoint(medium) {
+  padding: 3rem;
+  }
+  @include breakpoint(large) {
+  padding: 5rem;
+  }
+}
+
+.category__header__content {
+	background-color: $color--white;
+	padding: 3rem 2rem 2rem 2rem;
+	@include breakpoint(medium) {
+	padding: 3rem;
+  }
+}
+
+.category__header__content h1 {
+	line-height: 1;
+}
+
+.category__content__wrap {
+	background: linear-gradient(to right bottom, $color--white 50%, $color--lighter-gray 50%, $color--white 75%, $color--lighter-gray 75%);
+}
+
+.category__content {
+	padding: 0rem;
+	@include breakpoint(medium) {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+  	}
+}
+
+.category__title {
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing--looser;
+}
+
+.category__link .icon:hover {
+	fill: $color--dark-gray;
+}
+
+.category__image img {
+ 	z-index: -1;
+ 	position: absolute; 
+ 	left: 0px; 
+ 	bottom:0px; 
+ 	width: 100%;
+ 	height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+ 	opacity: 0.9;
+}
+
+//Carousel
+
+
+.carousel__text {
+	height: 100%;
+}
+
+
+.carousel__text h1 a {
+	color: $color--white;
+	&:hover {
+      color: $color--dark-gray;
+    }
+}
+
+.carousel__button {
+ 	line-height: $line-height--tight;
+ 	background-color: $color--black;
+ 	color: $color--white;
+	padding: 1rem 1.5rem;
+	margin-top: 1rem;
+	&:hover {
+      background-color: $color--white;
+      color: $color--black;
+    }
+}
+
+.carousel__image img {
+ 	z-index: -1;
+ 	position: absolute; 
+ 	left: 0px; 
+ 	bottom:0px; 
+ 	width: 100%;
+ 	height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+ 	opacity: 0.9;
+}
+
+
+
+// Sponsors
+.sponsors {
+	background-color: $color--light-gray;
+	color: $color--darkest-gray;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.sponsors a {
+	color: $color--darkest-gray;
+	&:hover {
+    color: black;
+  }
+}
+
+/*
+.sponsors__menu {
+	@include menu-direction(vertical);
+	@include breakpoint(medium) {
+    @include menu-direction(horizontal);
+  	}
+}
+*/
+
+.sponsors .icon {
+	font-size: 4rem;
+	@include breakpoint(medium) {
+    font-size: 6rem;
+  	}
+}
+
+.sponsors h5 {
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing--looser;
+}
+
+// Subscribe
+.subscribe {
+	background-color: $color--orange;
+	color: $color--white;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.subscribe__form {
+	padding-top: 1rem;
+}
+
+.subscribe__button {
+	margin-left: 2rem;
+}
+
+.subscribe h5 {
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing--looser;
+}
+
+// Footer
+.footer__top {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.footer__top__logo {
+	padding: 0.7rem 1rem;
+	text-align: center;
+	@include breakpoint(medium) {
+    text-align: left;
+  	}
+}
+
+.footer__top .menu > li > a {
+	font-size: 80%;
+	padding-top: 0.35rem;
+	padding-bottom: 0.35rem;
+}
+
+.footer__top .show-for-small-only {
+	font-size: 80%;
+}
+
+.footer__bottom {
+	color: $color--black;
+	padding-bottom: 1rem;
+}
+
+.footer__bottom a {
+	color: $color--black;
+	transition: $primary-transition;
+	&:hover {
+      color: $color--dark-gray;
+    }
+}
+
+
+.footer__bottom__copyright {
+	text-align: center;
+	@include breakpoint(medium) {
+    text-align: left;
+  	}
+}
+
+.footer__bottom__credit {
+	text-align: center;
+	@include breakpoint(medium) {
+    text-align: right;
+  	}
+}
+
+// Testing

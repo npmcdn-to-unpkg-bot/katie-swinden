@@ -1,0 +1,48 @@
+---
+title: Shaheen Baig Casting
+timezone: UTC
+collections:
+  project_categories:
+    title: Categories
+    output: true
+  posts:
+    title: Posts
+    output: true
+  projects:
+    title: Projects
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+url: http://shaheenbaigcasting.com
+permalink: pretty
+gems:
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll-feed
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+description: London-based casting director working on projects as diverse as Control,
+  Black Mirror and The Impossible
+domain: http://insideretail.com
+company: Shaheen Baig Casting
+email: info@shaheenbaigcasting.com
+facebook: https://www.facebook.com/shaheen-baig-casting-172941678486/
+instagram: 
+twitter: https://twitter.com/sbaigcasting
+linkedin: 
+googleplus: 
+google: UA-61943851-1
+logo: "/assets/img/layout/logo.svg"
+per_page: 12
+date_format: "%b %d, %Y"
+future: true
