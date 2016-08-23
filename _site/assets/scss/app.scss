@@ -8,6 +8,7 @@
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
+@import 'hover';
 
 @include foundation-global-styles;
 // @include foundation-grid;
@@ -55,6 +56,5 @@
 @include motion-ui-animations;
 
 @import 'carousel';
-@import 'search';
 @import 'icons';
 @import 'layout';

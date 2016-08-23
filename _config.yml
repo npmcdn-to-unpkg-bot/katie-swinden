@@ -2,12 +2,6 @@
 title: Katie Swinden
 timezone: UTC
 collections:
-  project_categories:
-    title: Categories
-    output: true
-  posts:
-    title: Posts
-    output: true
   projects:
     title: Projects
     output: true

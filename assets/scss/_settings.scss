@@ -47,10 +47,9 @@
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
-// $global-lineheight: 1.5;
-$global-lineheight: 1.4;
+$global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
+  primary: $color--black,
   secondary: #777,
   success: #3adb76,
   warning: #ffae00,
@@ -115,8 +114,8 @@ $font-family-secondary: 'Graphik-Bold-Web', Helvetica, Roboto, Arial, sans-serif
 $font-family-monospace: 'InputMonoNarrow-Regular', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
-    'h2': 20,
+    'h1': 36,
+    'h2': 30,
     'h3': 19,
     'h4': 18,
     'h5': 17,
@@ -148,7 +147,8 @@ $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+// $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color-hover: $color--dark-gray;
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -503,11 +503,13 @@ $switch-paddle-transition: all 0.25s ease-out;
 // 31. Table
 // ---------
 
-$table-background: $white;
+// $table-background: $white;
+$table-background: transparent;
 $table-color-scale: 5%;
 // $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-border: 0px solid smart-scale($table-background, $table-color-scale);
-$table-padding: rem-calc(8 10 10);
+// $table-padding: rem-calc(8 10 10);
+$table-padding: rem-calc(8 10 8 0);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
 $table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
@@ -573,7 +575,7 @@ $tooltip-radius: $global-radius;
 
 $topbar-padding: 0.5rem;
 // $topbar-background: $light-gray;
-$topbar-background: $color--white;
+$topbar-background: transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

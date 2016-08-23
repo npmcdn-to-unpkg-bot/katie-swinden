@@ -6,17 +6,12 @@ body {
 }
 body.fade-out {
     opacity: 0;
-    transition: none;
-}
-
-:focus {
-	outline: 0;
+    transition: $primary-transition;
 }
 
 svg {
 	max-width: 100%;
 }
-
 
 img {
 	display: block;
@@ -24,8 +19,9 @@ img {
 	height: auto
 }
 
-input::-webkit-input-placeholder {
-color: $color--white !important;
+::selection {
+    background: #333;
+    color: #fff
 }
 
 .no-js {
@@ -55,104 +51,51 @@ color: $color--white !important;
 
 // Layout
 
-a {
-	color: $color--black;
-	transition: $primary-transition;
-	&:hover {
-      color: $color--dark-gray;
-    }
-}
-
-.button {
+a { 
 	transition: $primary-transition;
 }
 
-html {
-  height: 100%;
+.detail {
+	font-size: 0.9rem;
+	font-family: $body-font-family;
 }
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+
+.underline-black { 
+	@include underline-from-left;
 }
-.content-wrapper {
-  flex: 1;
-}
+
 
 // Header
 
-.header__home {
+.navigation {
 	font-family: $header-font-family;
 	font-size: 1.5rem;
-}
-
-.top-bar .menu > li > a {
-	padding: 0.7rem 0.7rem;
+	padding-top: 1rem;
+	@include breakpoint(large) {
+   padding: 2rem;
+  	}
 }
 
 .current a {
   color: $color--dark-gray;
 }
 
-.element > a {
-  position: relative;
-  text-decoration: none;
-}
-
-.element > a:hover {
-  color: $color--dark-gray;
-}
-
-.element > a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: $primary-transition;
-}
-
-.element-black > a:before {
-  background-color: $color--black;
-}
-
-
-.element > a:hover:before {
-  @include breakpoint(medium) {
-  visibility: visible;
-  transform: scaleX(1);
-}
-}
-
-.primary-menu {
-  @include breakpoint(small only) {
-   border-top: 1px solid $color--gray;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-}
-
-.social-menu {
-  @include breakpoint(small only) {
-   border-top: 1px solid $color--gray;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-}
-
 //Index
 
 .index__description {
 	margin-top: 3rem;
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
+	a {
+    color: $color--dark-gray;
+    }
+    a:hover {
+    color: $color--black;
+    }
 }
 
 .index__content {
 	padding-top: 0rem;
-	padding-bottom: 2rem;
+	padding-bottom: 3rem;
 }
 
 // Projects
@@ -172,6 +115,10 @@ body {
 	margin-bottom: 0rem;
 }
 
+.project__meta .detail {
+	color: $color--dark-gray;
+}
+
 // CV
 
 .cv {
@@ -187,11 +134,6 @@ body {
 
 // Excerpt
 
-.excerpt__highlight {
-	font-family: $font-family-secondary;
-	@include accent-text;
-}
-
 .excerpt {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -204,9 +146,11 @@ body {
 .excerpt__image:after {
     content:'\A';
     position:absolute;
-    width:100%; height:100%;
-    top:0; left:0;
-    background:rgba(0,0,0,0.6);
+    width:100%; 
+    height:100%;
+    top:0; 
+    left:0;
+    background:rgba(0,0,0,0.2);
     opacity:0;
     transition: $primary-transition;
 }
@@ -226,13 +170,18 @@ body {
 	margin-bottom: 0;
 }
 
-// Page
+// About
 
-.page__title {
+.about__content {
+	font-family: $header-font-family;
+	font-size: 1.5rem;
 	padding-top: 3rem;
+	padding-bottom: 3rem;
 }
 
-.page__content {
+.about__cv {
+	font-family: $header-font-family;
+	font-size: 1.5rem;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
 }
@@ -252,20 +201,6 @@ body {
   @include breakpoint(large) {
     padding: 7rem;
   }
-}
-
-.post__title {
-}
-
-.post__content__quote blockquote {
-	font-family: $header-font-family;
-	font-size: 2rem;
-	line-height: 1.2;
-	color: $color--black;
-}
-
-.post__content__quote cite {
-	padding-top: 1rem;
 }
 
 .post__hero {
@@ -301,153 +236,36 @@ body {
 	padding-top: 2rem;
 }
 
-// Category
-
-.category {
-  background: $color--white;
-  height: 500px; /* set gallery height */
-}
-
-.category-cell {
-  width: 100%;
-  height: 100%; /* inherit height from gallery */
-//   margin-right: 10px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  z-index: 1;
-}
-
-.category__header {
-  width: 100%;
-  height: 100%; /* inherit height from gallery */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  z-index: 1;
-  position: relative;
-  @include breakpoint(medium) {
-  padding: 3rem;
-  }
-  @include breakpoint(large) {
-  padding: 5rem;
-  }
-}
-
-.category__header__content {
-	background-color: $color--white;
-	padding: 3rem 2rem 2rem 2rem;
-	@include breakpoint(medium) {
-	padding: 3rem;
-  }
-}
-
-.category__header__content h1 {
-	line-height: 1;
-}
-
-.category__content__wrap {
-	background: linear-gradient(to right bottom, $color--white 50%, $color--lighter-gray 50%, $color--white 75%, $color--lighter-gray 75%);
-}
-
-.category__content {
-	padding: 0rem;
-	@include breakpoint(medium) {
-	padding-top: 3rem;
-	padding-bottom: 3rem;
-  	}
-}
-
-.category__title {
-	text-transform: uppercase;
-	letter-spacing: $letter-spacing--looser;
-}
-
-.category__link .icon:hover {
-	fill: $color--dark-gray;
-}
-
-.category__image img {
- 	z-index: -1;
- 	position: absolute; 
- 	left: 0px; 
- 	bottom:0px; 
- 	width: 100%;
- 	height: 100%;
-    object-fit: cover;
-    overflow: hidden;
- 	opacity: 0.9;
-}
-
-//Carousel
-
-
-.carousel__text {
-	height: 100%;
-}
-
-
-.carousel__text h1 a {
-	color: $color--white;
-	&:hover {
-      color: $color--dark-gray;
-    }
-}
-
-.carousel__button {
- 	line-height: $line-height--tight;
- 	background-color: $color--black;
- 	color: $color--white;
-	padding: 1rem 1.5rem;
-	margin-top: 1rem;
-	&:hover {
-      background-color: $color--white;
-      color: $color--black;
-    }
-}
-
-.carousel__image img {
- 	z-index: -1;
- 	position: absolute; 
- 	left: 0px; 
- 	bottom:0px; 
- 	width: 100%;
- 	height: 100%;
-    object-fit: cover;
-    overflow: hidden;
- 	opacity: 0.9;
-}
-
-
 
 // Footer
 
-.footer__bottom {
-	color: $color--black;
+footer {
+	margin-top: 3rem;
+	background-color: $color--darkest-gray;
+	color: $color--dark-gray;
 	padding-bottom: 1rem;
-}
-
-.footer__bottom a {
-	color: $color--black;
-	transition: $primary-transition;
-	&:hover {
-      color: $color--dark-gray;
+	padding-top: 1rem;
+	a {
+    color: $color--white;
     }
 }
 
-
-.footer__bottom__copyright {
-	text-align: center;
-	@include breakpoint(medium) {
-    text-align: left;
-  	}
+.footer__top {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	font-family: $header-font-family;
+	font-size: 1.5rem;
 }
 
-.footer__bottom__credit {
-	text-align: center;
-	@include breakpoint(medium) {
-    text-align: right;
-  	}
+footer .detail {
+	padding-bottom: 1rem;
 }
 
-// Testing
+.footer__bottom {
+	@include breakpoint(large) {
+   padding: 2rem;
+  	}
+	a {
+    color: $color--dark-gray;
+    }
+}

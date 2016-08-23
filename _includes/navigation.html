@@ -1,42 +1,18 @@
-<div class="title-bar" data-responsive-toggle="primary-menu" data-hide-for="medium">
-  <div class="title-bar-title"><a href="/" class="header__home">{{ site.title }}</a></div>
-  <button class="hamburger hamburger--collapse" id="menuBar" data-toggler=".is-active" type="button" data-toggle="menuBar"><span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-  </span></button>
+<div data-sticky-container>
+
+
+<!-- Desktop -->
+<div class="navigation" data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%">
+    
+    <div class="row expanded">
+    	<div class="text-left small-6 columns">
+    		<a href="/">{{ site.title }}</a>
+    	</div>
+    	<div class="text-right small-6 columns">
+    		<a href="/about">About</a>
+    	</div>
+    </div>
+  
 </div>
 
-<div class="top-bar" id="primary-menu">
-  
-<div class="top-bar-left">
-	<ul class="vertical medium-horizontal dropdown menu primary-menu" data-dropdown-menu>
-	<li class="hide-for-small-only"><a href="/" class="header__home">{{ site.title }}</a></li>
-	{% for link in site.data.navigation %}
-	    {% assign current = nil %}
-	    {% if page.url contains link.url %}
-	        {% assign current = 'current' %}
-	    {% endif %}
-	{% if link.subcategories != null %}
-	<li>
-	<a href="{{ link.href }}">{{ link.title }}</a>
-	<ul class="menu">
-	  {% for subcategory in link.subcategories %}
-	  <li><a href="{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
-	  {% endfor %}
-	</ul>
-	</li>
-	{% else %}
-	<li>
-	<a href="{{ link.href }}">{{ link.title }}</a>
-	{% endif %}
-	</li>
-	{% endfor %}
-	</ul> 
-</div>
-  
-<div class="top-bar-right hide-for-small-only">
-	<ul class="menu align-right">
-		<li><a href="{{ site.twitter }}">Follow</a></li>
-	</ul>
-</div>
-  
 </div>
