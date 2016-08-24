@@ -10,4 +10,4 @@ layout: about
 
 ### Contact  
 [hi@katieswinden.com](mailto:katieswinden@mac.com)  
-London, United Kingdom 
+London United Kingdom 
