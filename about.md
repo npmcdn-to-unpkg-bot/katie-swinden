@@ -4,22 +4,10 @@ layout: about
 ---
 
 ### Follow
-[Twitter](test)  
-[IMDB]()  
-[LinkedIn]()  
-[Vimeo]()
+[Twitter](https://twitter.com/swindenproduces)  
+[IMDB](http://www.imdb.com/name/nm1939604/)  
+[Vimeo](https://vimeo.com/user16781203)
 
 ### Contact  
-Paul Stevens  
-Independent Talent  
-Oxford House  
-76 Oxford Street  
-London W1D 1BS  
-+44 20 7636 6565
-
-### Impressum
-Avalanche Film & TV  
-Registered Company 07686887  
-Registered in England  
-Skyview House, 10 Saint Neots Road  
-Sandy, Bedfordshire, SG19 1LB
+[hi@katieswinden.com](mailto:katieswinden@mac.com)  
+London, United Kingdom 

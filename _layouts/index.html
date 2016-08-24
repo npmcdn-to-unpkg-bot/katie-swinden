@@ -12,7 +12,7 @@ layout: default
 
 <section class="index__content">
 	<div class="row">
-	{% assign projects = site.projects | sort: 'date' | reverse | where: "is-in-production", "" %}
+	{% assign projects = site.projects | sort: 'date' | reverse | where: "is-featured", "true" %}
 	{% for project in projects limit:9 %}
 	<div class="small-12 medium-6 large-6 columns">
 	{% include excerpt.html %}
