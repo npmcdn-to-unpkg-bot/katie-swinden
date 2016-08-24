@@ -1,0 +1,45 @@
+---
+title: Katie Swinden
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  projects:
+    title: Projects
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+url: http://katieswinden.com
+permalink: pretty
+gems:
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll-feed
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+description: Creative Director at Fifty Fathoms Productions with a brief to develop
+  and executive produce the labels new commissions
+domain: http://katieswinden.com
+company: Katie Swinden
+email: katieswinden@mac.com
+facebook: 
+instagram: 
+twitter: swindenproduces
+linkedin: 
+googleplus: 
+google: UA-61943851-1
+logo: "/assets/img/layout/logo.svg"
+per_page: 12
+date_format: "%b %d, %Y"
+future: true

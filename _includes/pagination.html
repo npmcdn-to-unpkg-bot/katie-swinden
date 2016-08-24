@@ -1,0 +1,19 @@
+<div class="row align-center">
+
+<div class="column small-5">
+<a href="{{ current.previous.url }}" style="visibility: {% if current.previous %}visible{% else %}hidden{% endif %}">&larr; Previous</a>
+</div>
+
+<div class="column small-2 grid">
+{% if parent %}
+<a href="{{parent.url}}">Grid</a>
+{% endif %}
+</div>
+
+
+<div class="column small-5">
+<a href="{{ current.next.url }}" style="visibility: {% if current.next %}visible{% else %}hidden{% endif %}">Next &rarr;</a>
+</div>
+
+</div>
+

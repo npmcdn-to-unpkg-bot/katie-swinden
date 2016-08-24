@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<section class="index__description">
+	<div class="row">
+	<div class="small-12 medium-10 large-8 columns">
+	<h1>Creative Director at <a href="http://www.tigeraspect.co.uk/fifty-fathoms/" target="_blank">Fifty Fathoms Productions</a> with a brief to develop and executive produce the labels new commissions</h1>
+	</div>
+	</div>
+</section>
+
+<section class="index__content">
+	<div class="row">
+	{% assign projects = site.projects | sort: 'date' | reverse | where: "is-featured", "true" %}
+	{% for project in projects limit:9 %}
+	<div class="small-12 medium-6 large-6 columns">
+	{% include excerpt.html %}
+	</div>
+	{% endfor %}
+	</div>
+</section>
