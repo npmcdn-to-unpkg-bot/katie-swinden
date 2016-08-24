@@ -19,7 +19,7 @@ layout: default
 <div class="row">
 <div class="small-12 columns">
 
-<h2>Projects</h2>
+<h3>Projects</h3>
 
 <table class="hover">
   <tbody>
@@ -27,8 +27,8 @@ layout: default
 	{% for item in collectionsorted %}
     <tr>
       <td width="200"><a href="{{item.url}}">{{item.title}}</a></td>
+      <td width="200"><a href="{{item.url}}">{{item.company}}</a></td>
       <td width="200"><a href="{{item.url}}">{{item.director}}</a></td>
-      <td width="400"><a href="{{item.url}}">{{item.with}}</a></td>
       <td width="50"><a href="{{item.imdb}}" target="_blank">IMDB</a></td>
       <td width="40"><a href="{{item.url}}">{{item.date | date: '%Y'}}</a></td>
     </tr>

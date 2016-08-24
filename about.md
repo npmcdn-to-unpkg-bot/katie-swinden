@@ -3,13 +3,13 @@ title: About
 layout: about
 ---
 
-## Follow
+### Follow
 [Twitter](test)  
 [IMDB]()  
 [LinkedIn]()  
 [Vimeo]()
 
-## Contact  
+### Contact  
 Paul Stevens  
 Independent Talent  
 Oxford House  
@@ -17,7 +17,7 @@ Oxford House
 London W1D 1BS  
 +44 20 7636 6565
 
-## Impressum
+### Impressum
 Avalanche Film & TV  
 Registered Company 07686887  
 Registered in England  

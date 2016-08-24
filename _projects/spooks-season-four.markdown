@@ -7,17 +7,16 @@ span: July 2004 – July 2005
 company: Kudos Film & Television
 runtime: 10 x 60 min. episodes
 awards: BAFTA Nominated for Best Drama Series
-creator: Ben Richards, Howard Brenton, Raymond Khoury, David Farr, Rupert Walters
+writer: Ben Richards, Howard Brenton, Raymond Khoury, David Farr, Rupert Walters
 director: Antonia Bird, Alrick Riley, Jeremy Lovering, Omar Madha, Julian Simpson
-with: Rupert Penry-Jones, Peter Firth, Raza Jaffrey, Nicola Walker, Olga Sosnovska,
-  Miranda Raison
+with: Rupert Penry-Jones, Peter Firth, Raza Jaffrey, Nicola Walker, Olga Sosnovska, Miranda Raison
 producers: Jane Featherstone, Simon Crawford Collins, Lucy Richer, Andrew Woodhead
+role: Assistant Producer
 imdb: http://www.imdb.com/title/tt0160904/
 video: 
 layout: project
-is-in-production: 
-is-featured: 
-featured-image: 
+is-in-production:  
+is-featured: "true"
 ---
 
 Spooks’ secret agents are back on superb form in this enthralling fourth season. It’s a drama that’s packed with twists and turns, clever characterisation, conspiracies and a generous dollop of intrigue. The Spooks of the title are counter-terrorism spies, living in a constant world of danger, and some of the edgy plotlines of this and the seasons that preceded it are testament to that.

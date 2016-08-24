@@ -4,22 +4,27 @@ layout: default
 
 <!-- Post Title -->
 <div class="row project__meta">
-	<div class="small-11 medium-8 columns">
+	<div class="small-12 medium-8 columns">
 		<h1>{{ page.title }}</h1>
-		<p><span class="detail">Director(s)</span> {{ page.director }}</p>
-		<p><span class="detail">With</span> {{ page.with }}</p>
-		<p><a href="{{ page.imdb}}" target="_blank">IMDB</a></p>
+		{{ page.company }}<br>
+		{{ page.runtime }}<br>
+		{% if page.awards %}{{ page.awards }}<br>{% endif %}
+		<span class="detail">Director(s)</span> {{ page.director }}<br>
+		<span class="detail">Writer(s)</span> {{ page.writer }}<br>
+		<span class="detail">Producer(s)</span> {{ page.producers }}<br>
+		<span class="detail">With</span> {{ page.with }}<br>
+		<a href="{{ page.imdb}}" class="detail" target="_blank">IMDB</a>
 	</div>
 </div>
 
 {% if page.video or page.img %}
 <div class="row post__hero">
-<div class="small-11 medium-10 large-8 columns">
+<div class="small-12 medium-10 large-8 columns">
 {% if page.video %}
 
 <div class="flex-video widescreen vimeo">
 
-<iframe src="https://player.vimeo.com/video/{{page.video}}?autoplay=1&color=FFFFFF&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/{{page.video}}?autoplay=0&color=FFFFFF&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 </div>
 

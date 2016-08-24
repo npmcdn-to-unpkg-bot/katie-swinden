@@ -6,17 +6,17 @@ img: "/uploads/marvellous.jpg"
 span: September 2013 - July 2014
 company: Fifty Fathoms Productions and Tiger Aspect for BBC 2
 runtime: TV Movie
-awards: 
-creator: Peter Bowker
+awards: BAFTA Best Single Drama, Best Supporting Actress, Best Leading Actor
+writer: Peter Bowker
 director: Julian Farino
 with: Toby Jones, Gemma Jones, Tony Curran, Nicholas Gleaves, Greg McHugh
 producers: Peter Bowker, Patrick Spence
+role: Producer
 imdb: http://www.imdb.com/title/tt3659786/
-video: 
+video: 179625241
 layout: project
-is-in-production: 
-is-featured: 'true'
-featured-image: "/uploads/marvellous.jpg"
+is-in-production:
+is-featured: "true"
 ---
 
 Part biopic, part musical, part fantasy, this is the inspirational and incredible true story of Neil Baldwin, a man who refused to accept the label of learning difficulties, and who has led an extraordinary life. Written by Peter Bowker and directed by Julian Farino

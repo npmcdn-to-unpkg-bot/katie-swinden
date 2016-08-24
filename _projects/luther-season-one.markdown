@@ -7,15 +7,16 @@ span: July 2009 - April 2010
 company: BBC Drama Series and Serials
 runtime: 6 x 60 min. episodes
 awards: Golden Globe nominated for Best Actor
-creator: Neil Cross
-director: Juan Carlos Fresnadillo
+writer: Neil Cross
+director: Brian Kirk, Sam Miller, Stefan Schwartz
 with: Idris Elba, Ruth Wilson, Warren Brown, Indira Varma, Paul McGann, Steven Mackintosh
+producers: Phillippa Giles, Katie Swinden, Idris Elba
+role: Producer
 imdb: http://www.imdb.com/title/tt1474684/
 video: 61914262
 layout: project
-is-in-production: 
-is-featured: 'true'
-featured-image: "/uploads/luther-season-one.jpg"
+is-in-production:
+is-featured: "true"
 ---
 
 LUTHER is a dark psychological crime drama in which John Luther (Idris Elba), is a man struggling with his own terrible demons, might just be as dangerous as the depraved murderers he hunts. His only confidante, and perhaps his worst enemy, is a multiple-murderess whom he failed to see convicted for the slaughter of her own family.
