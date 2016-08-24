@@ -9,14 +9,16 @@ runtime: 6 x 60 min. episodes
 awards: 
 writer: Steven Knight, David Leland, Steven Russell, Toby Finlay
 director: Otto Bathurst, Tom Harper
-with: Cillian Murphy, Sam Neill, Helen McCrory, Paul Anderson, Annabelle Wallis, Joe Cole
-producers: Steven Knight, Caryn Mandabach, Jamie Glazebrook, Greg Brenman, Frith Tiplady, Matthew Read, Katie Swinden
+with: Cillian Murphy, Sam Neill, Helen McCrory, Paul Anderson, Annabelle Wallis, Joe
+  Cole
+producers: Steven Knight, Caryn Mandabach, Jamie Glazebrook, Greg Brenman, Frith Tiplady,
+  Matthew Read, Katie Swinden
 role: Producer
 imdb: http://www.imdb.com/title/tt2442560/
 video: 74524699
 layout: project
-is-in-production:
-is-featured: "true"
+is-in-production: 
+is-featured: 'true'
 ---
 
 Peaky Blinders is an epic gangster family saga that takes place in a dangerous, romantic, elevated, visceral world, where the men are handsome and heroic and the women are beautiful and indomitable. The setting is the back streets of 1920s Birmingham, a city of steel plants, criminal gangs, gypsies, canals… an unseen side of Britain’s history. The world of the original British gangster.

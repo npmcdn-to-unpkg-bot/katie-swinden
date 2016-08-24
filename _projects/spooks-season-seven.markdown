@@ -9,14 +9,15 @@ runtime: 8 x 60 min. episodes
 awards: International Emmy, BAFTA Nominated for Best Drama Series
 writer: Neil Cross, Rupert Walters, David Farr, Zinne Harris, George Tiffin, Ben Richards
 director: Colm McCarthy, Peter Hoar, Edward Hall, Sam Miller
-with: Richard Armitage, Rupert Penry-Jones, Hermione Norris, Peter Firth, Gemma Jones, Alex Lanipekun, Miranda Raison
+with: Richard Armitage, Rupert Penry-Jones, Hermione Norris, Peter Firth, Gemma Jones,
+  Alex Lanipekun, Miranda Raison
 producers: Jane Featherstone, Simon Crawford Collins, Sarah Brandist, Katie Swinden
 role: Producer
 imdb: http://www.imdb.com/title/tt2442560/
 video: 64350474
 layout: project
 is-in-production: 
-is-featured: "true"
+is-featured: 'true'
 ---
 
 Following the success of Season 6’s long running story, this time the primary storyline involves Sugarhorse, a top secret operation set up by MI5 during the final years of the Cold War, and a mole working for the FSB who intends to leak the operation to the Russians. It also saw the introduction of new MI5 operative, Lucas North (Richard Armitage) and the death of Adam Carter (Rupert Penry-Jones). Some of the season was shot in Moscow.
