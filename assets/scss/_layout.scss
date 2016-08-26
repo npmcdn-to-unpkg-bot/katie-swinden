@@ -80,6 +80,19 @@ a {
   color: $color--dark-gray;
 }
 
+// 404
+
+.missing {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	a {
+    color: $color--dark-gray;
+    }
+    a:hover {
+    color: $color--black;
+    }
+}
+
 //Index
 
 .index__description {
@@ -98,12 +111,6 @@ a {
 	padding-bottom: 3rem;
 }
 
-// Projects
-
-.projects__content {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
 
 // Project
 
@@ -119,16 +126,32 @@ a {
 	color: $color--dark-gray;
 }
 
-// CV
-
-.cv {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+.project__hero {
+	padding-top: 3rem;
 }
 
-.cv__title {
+.project__content {
+	padding-top: 3rem;
+}
+
+.project__content a {
+  color: $color--dark-gray;
+  &:hover {
+    color: $color--black;
+  }
+}
+
+.project__share {
+	@include accent-text;
+}
+
+.project__share__bottom {
 	padding-top: 2rem;
-	padding-bottom: 1rem;
+	@include accent-text;
+}
+
+.project__pagination {
+	padding-top: 2rem;
 }
 
 
@@ -184,56 +207,6 @@ a {
 	font-size: 1.5rem;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
-}
-
-// Post
-.post__wrapper {
-	padding-top: 3rem;
-	padding-bottom: 3rem;
-}
-
-.post__panel {
-	background-color: $color--white;
-	padding: 2rem;
-	@include breakpoint(medium) {
-  padding: 3rem;
-  }
-  @include breakpoint(large) {
-    padding: 7rem;
-  }
-}
-
-.post__hero {
-	padding-top: 3rem;
-}
-
-.post__content {
-	padding-top: 3rem;
-}
-
-.post__content__quote {
-	padding-top: 3rem;
-}
-
-
-.post__content a {
-  color: $color--dark-gray;
-  &:hover {
-    color: $color--black;
-  }
-}
-
-.post__share {
-	@include accent-text;
-}
-
-.post__share__bottom {
-	padding-top: 2rem;
-	@include accent-text;
-}
-
-.post__pagination {
-	padding-top: 2rem;
 }
 
 
