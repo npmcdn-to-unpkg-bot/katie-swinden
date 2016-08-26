@@ -131,6 +131,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_layouts\/default.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_layouts\/default.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_layouts\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -172,15 +181,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_site\/about\/index.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/_site\/assets\/css\/app.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_site\/assets\/css\/app.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -537,28 +537,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_site\/uploads\/shaheen-baig-casting-28-weeks-later.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 34342,
-		"inputAbbreviatedPath": "\/_site\/uploads\/shaheen-baig-casting-28-weeks-later.jpg",
-		"outputAbbreviatedPath": "\/_site\/uploads\/shaheen-baig-casting-28-weeks-later.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_site\/uploads\/shaheen-baig-casting-slide-southcliffe.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 71214,
-		"inputAbbreviatedPath": "\/_site\/uploads\/shaheen-baig-casting-slide-southcliffe.jpg",
-		"outputAbbreviatedPath": "\/_site\/uploads\/shaheen-baig-casting-slide-southcliffe.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/_site\/uploads\/spooks-season-five.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -643,28 +621,6 @@
 		"initialSize": 71322,
 		"inputAbbreviatedPath": "\/_uploads\/peaky-blinders.jpg",
 		"outputAbbreviatedPath": "\/_uploads\/peaky-blinders.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_uploads\/shaheen-baig-casting-28-weeks-later.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 34342,
-		"inputAbbreviatedPath": "\/_uploads\/shaheen-baig-casting-28-weeks-later.jpg",
-		"outputAbbreviatedPath": "\/_uploads\/shaheen-baig-casting-28-weeks-later.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_uploads\/shaheen-baig-casting-slide-southcliffe.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 71214,
-		"inputAbbreviatedPath": "\/_uploads\/shaheen-baig-casting-slide-southcliffe.jpg",
-		"outputAbbreviatedPath": "\/_uploads\/shaheen-baig-casting-slide-southcliffe.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
