@@ -5,7 +5,7 @@ medium: television
 img: 
 span: Jun 2000 – Jun 2001
 company: Thames Television
-runtime: 1 x 60 min. episode
+runtime: 1 x 60 min episode
 awards: 
 writer: 
 director: 
@@ -14,8 +14,8 @@ producers: May Gibson, Chris Parr
 role: Script Editor
 imdb: http://www.imdb.com/title/tt0068069/
 video: 
-layout: project
 is-in-production: 
 is-featured: 
+layout: project
 ---
 
